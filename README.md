@@ -1,5 +1,9 @@
 # MultiCat — Multi-Agent LLM Pipeline for Heterogeneous Catalysis Data Extraction
 
+<p align="center">
+  <img src="docs/images/toc_graphic.png" alt="Graphical abstract" width="600">
+</p>
+
 A large-scale, multi-agent LLM system for extracting structured data from heterogeneous catalysis literature. Automatically extracts reaction conditions and performance data from publisher full-text XML, producing a structured dataset ready for machine learning.
 
 ## Overview
@@ -7,6 +11,10 @@ A large-scale, multi-agent LLM system for extracting structured data from hetero
 ```
 Scopus DOI search -> XML acquisition -> text packaging -> Screening -> Extraction -> Validation -> Repair -> Judge -> reaction-level table
 ```
+
+<p align="center">
+  <img src="docs/images/figure1_workflow.png" alt="Overall workflow spanning three tracks: data construction, data quality evaluation, and ML-ready analysis" width="900">
+</p>
 
 Four LLM agents work in sequence:
 
