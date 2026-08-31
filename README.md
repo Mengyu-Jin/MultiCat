@@ -2,10 +2,6 @@
 
 A large-scale, multi-agent LLM system for extracting structured data from heterogeneous catalysis literature. Automatically extracts reaction conditions and performance data from publisher full-text XML, producing a structured dataset ready for machine learning.
 
-Companion code for: *Using Multi-Agent Systems with Self-Correcting Loop for Enhancing the Fidelity of Data Extracted from Heterogeneous Catalysis Literature* (in submission).
-
-This repository contains only the core code for the data-extraction pipeline. The machine-learning training, SHAP analysis, and all figure-generation code from the paper are outside the scope of this repository.
-
 ## Overview
 
 ```
