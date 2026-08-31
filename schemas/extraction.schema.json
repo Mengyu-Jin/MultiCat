@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Catalysis Chapter 1 Extraction Schema",
+  "type": "object",
+  "required": ["paper", "catalysts", "reactions", "extraction_meta"],
+  "additionalProperties": false,
+  "properties": {
+    "paper": {
+      "type": "object"
+    },
+    "catalysts": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "reactions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "extraction_meta": {
+      "type": "object"
+    }
+  }
+}
+
