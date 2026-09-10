@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Catalysis Chapter 1 Extraction Schema v1",
+  "title": "MultiCat Extraction Schema v1",
   "type": "object",
   "required": ["paper", "catalysts", "reactions", "extraction_meta"],
   "additionalProperties": false,

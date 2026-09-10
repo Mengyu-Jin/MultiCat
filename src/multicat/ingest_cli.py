@@ -499,7 +499,7 @@ def main() -> int:
         or os.environ.get("SPRINGER_API_KEY", ""),
     )
 
-    print(f"Catalysis Chapter 1 — Ingest CLI")
+    print(f"MultiCat — Ingest CLI")
     print(f"Profile:  {args.profile or 'default'}")
     print(f"Registry: {registry_path}")
     print(f"Papers:   {papers_root}")

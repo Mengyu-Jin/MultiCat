@@ -1,2 +1,2 @@
-"""Catalysis Chapter 1 XML-first extraction project."""
+"""MultiCat XML-first extraction project."""
 

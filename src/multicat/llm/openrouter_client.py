@@ -50,8 +50,8 @@ class OpenRouterClient:
         headers = {
             "Authorization": f"Bearer {self.api_key}",
             "Content-Type": "application/json",
-            "HTTP-Referer": "https://local/catalysis-chapter1",
-            "X-Title": "Catalysis Chapter 1",
+            "HTTP-Referer": "https://local/multicat",
+            "X-Title": "MultiCat",
         }
         started_at = time.monotonic()
         try:
