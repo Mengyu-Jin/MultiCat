@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 
 from multicat.agents.io import read_agent_input, write_agent_json
+from multicat.validator.schema_utils import validate_with_schema
 
 
 def run_judge_agent(paper_dir: Path, llm_client, system_prompt: str) -> dict:
@@ -40,7 +41,4 @@ def _normalize_judge_result(result: dict) -> dict:
 
 
 def _validate_judge_result(result: dict) -> None:
-    if result.get("status") not in {"pass", "fail"}:
-        raise ValueError("Judge Agent result must contain status=pass or fail.")
-    if not isinstance(result.get("issues"), list):
-        raise ValueError("Judge Agent issues must be a list.")
+    validate_with_schema(result, "judge.schema.json", label="Judge Agent")

@@ -3,6 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from multicat.agents.io import read_agent_input, write_agent_json
+from multicat.validator.schema_utils import validate_with_schema
 
 
 def run_screening_agent(paper_dir: Path, llm_client, system_prompt: str) -> dict:
@@ -28,17 +29,7 @@ def _normalize_screening_result(result: dict) -> dict:
 
 
 def _validate_screening_result(result: dict) -> None:
-    if result.get("decision") not in {"keep", "skip"}:
-        raise ValueError("Screening Agent result must contain decision=keep or skip.")
-    if not isinstance(result.get("reason"), str) or not result["reason"].strip():
-        raise ValueError("Screening Agent result must contain a non-empty reason.")
-    if result.get("decision") == "keep":
-        labels = result.get("figure_labels")
-        if not isinstance(labels, dict):
-            raise ValueError("Screening Agent keep result must contain figure_labels dict.")
-        for fid, label in labels.items():
-            if label not in {"wanted", "not_wanted"}:
-                raise ValueError(f"figure_labels[{fid!r}] must be 'wanted' or 'not_wanted', got {label!r}.")
+    validate_with_schema(result, "screening.schema.json", label="Screening Agent")
 
 
 def _apply_deterministic_screening_overrides(result: dict, agent_input: str) -> dict:

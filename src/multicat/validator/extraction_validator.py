@@ -8,6 +8,8 @@ from typing import Any
 
 import jsonschema
 
+from multicat.validator.schema_utils import load_schema
+
 
 # ── Normalization constants and helper functions ────────────────────────────
 
@@ -502,8 +504,7 @@ def _validate_top_level(payload: dict, issues: list[dict[str, str]]) -> None:
 
 
 def _validate_v1_schema(payload: dict, issues: list[dict[str, str]]) -> None:
-    schema_path = Path(__file__).resolve().parents[3] / "schemas" / "extraction_v1.schema.json"
-    schema = json.loads(schema_path.read_text(encoding="utf-8"))
+    schema = load_schema("extraction_v1.schema.json")
     validator = jsonschema.Draft202012Validator(schema)
     for error in sorted(validator.iter_errors(payload), key=lambda item: list(item.path)):
         path = ".".join(str(part) for part in error.path)
