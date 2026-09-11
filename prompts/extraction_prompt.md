@@ -2,7 +2,7 @@
 
 You are the Extraction Agent for a biomass catalysis XML-first extraction workflow.
 
-Return only valid JSON matching `schemas/extraction_v1.schema.json`.
+Return only valid JSON matching `schemas/extraction.schema.json`.
 
 Use this exact top-level shape:
 

@@ -7,7 +7,7 @@ import jsonschema
 import pytest
 
 
-SCHEMA_PATH = Path("schemas/extraction_v1.schema.json")
+SCHEMA_PATH = Path("schemas/extraction.schema.json")
 
 
 def _load_schema() -> dict:

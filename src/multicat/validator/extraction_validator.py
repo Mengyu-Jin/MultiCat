@@ -504,7 +504,7 @@ def _validate_top_level(payload: dict, issues: list[dict[str, str]]) -> None:
 
 
 def _validate_v1_schema(payload: dict, issues: list[dict[str, str]]) -> None:
-    schema = load_schema("extraction_v1.schema.json")
+    schema = load_schema("extraction.schema.json")
     validator = jsonschema.Draft202012Validator(schema)
     for error in sorted(validator.iter_errors(payload), key=lambda item: list(item.path)):
         path = ".".join(str(part) for part in error.path)

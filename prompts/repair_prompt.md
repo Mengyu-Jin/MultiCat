@@ -13,7 +13,7 @@ Return only valid JSON with this exact shape:
 }
 ```
 
-`repaired_extraction` must be a full extraction JSON object matching `schemas/extraction_v1.schema.json`:
+`repaired_extraction` must be a full extraction JSON object matching `schemas/extraction.schema.json`:
 
 ```json
 {
@@ -28,7 +28,7 @@ Rules:
 
 - Use the Validation Report and Judge Report as the repair target.
 - This workflow runs in `ml_core` mode. Never add recycling, reuse, stability, kinetics, or no-catalyst control reactions, and never add catalysts whose reaction tables are not in the Agent Input, even if a Judge issue requests it. Those are out of scope by design.
-- Never add fields that are not in `schemas/extraction_v1.schema.json`. In particular, never add `run_number` or `cycle_number` to `conditions`. The `conditions` object allows only its defined keys.
+- Never add fields that are not in `schemas/extraction.schema.json`. In particular, never add `run_number` or `cycle_number` to `conditions`. The `conditions` object allows only its defined keys.
 - Only repair issues that are consistent with the schema and ml_core scope. If a Judge issue asks for out-of-scope data or a schema-invalid field, leave the extraction unchanged for that issue and record the reason in `repair_log`.
 - If a valid heterogeneous catalyst table row that is present in the Agent Input is missing from the extraction, add the missing catalyst record if needed and add the corresponding reaction record.
 - If a reaction merged several table rows, split it into separate reaction records.
