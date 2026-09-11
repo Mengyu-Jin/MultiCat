@@ -1,6 +1,6 @@
-# Schema v1 Field Design
+# Schema Field Design
 
-This file documents the v1 field design for the XML-first biomass catalysis extraction project. All machine-readable field names, JSON keys, CSV/TSV/Excel headers, schema properties, and status enum values use English.
+This file documents the field design for the XML-first biomass catalysis extraction project. All machine-readable field names, JSON keys, CSV/TSV/Excel headers, schema properties, and status enum values use English.
 
 ## 1. Trace / Index Fields
 
